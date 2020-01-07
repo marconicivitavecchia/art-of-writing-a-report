@@ -1,0 +1,157 @@
+[General]
+kile_livePreviewEnabled=true
+kile_livePreviewStatusUserSpecified=false
+kile_livePreviewTool=LivePreview-PDFLaTeX
+lastDocument=sezioni/citazioni_e_biblio.tex
+
+[document-settings,item:scuola/Edizioni Marconi/una mica tanto breve introduzione all arte della relazione/sezioni/introduzione.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[document-settings,item:scuola/Edizioni Marconi/una mica tanto breve introduzione all arte della relazione/short_report_guide.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[document-settings,item:sezioni/citazioni_e_biblio.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[document-settings,item:sezioni/grafici_e_tabelle.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[document-settings,item:sezioni/introduzione.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[document-settings,item:sezioni/significato_relazione-1.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[document-settings,item:short_report_guide.kilepr]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=None
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=Normal
+Mode Set By User=false
+
+[document-settings,item:short_report_guide.tex]
+Bookmarks=
+Encoding=UTF-8
+Highlighting=LaTeX
+Highlighting Set By User=false
+Indentation Mode=normal
+Mode=LaTeX
+Mode Set By User=false
+
+[item:sezioni/citazioni_e_biblio.tex]
+open=true
+order=1
+
+[item:sezioni/grafici_e_tabelle.tex]
+open=true
+order=2
+
+[item:sezioni/introduzione.tex]
+open=false
+order=-1
+
+[item:sezioni/significato_relazione-1.tex]
+open=true
+order=3
+
+[item:short_report_guide.kilepr]
+open=false
+order=-1
+
+[item:short_report_guide.tex]
+open=true
+order=0
+
+[view-settings,view=0,item:scuola/Edizioni Marconi/una mica tanto breve introduzione all arte della relazione/sezioni/introduzione.tex]
+CursorColumn=0
+CursorLine=0
+JumpList=
+TextFolding=[]
+ViMarks=
+
+[view-settings,view=0,item:scuola/Edizioni Marconi/una mica tanto breve introduzione all arte della relazione/short_report_guide.tex]
+CursorColumn=0
+CursorLine=0
+JumpList=
+TextFolding=[]
+ViMarks=
+
+[view-settings,view=0,item:sezioni/citazioni_e_biblio.tex]
+CursorColumn=31
+CursorLine=52
+JumpList=
+TextFolding=[]
+ViMarks=.,52,30,[,52,30,],52,30
+
+[view-settings,view=0,item:sezioni/grafici_e_tabelle.tex]
+CursorColumn=11
+CursorLine=357
+JumpList=
+TextFolding=[]
+ViMarks=.,297,11,[,297,11,],297,16
+
+[view-settings,view=0,item:sezioni/introduzione.tex]
+CursorColumn=0
+CursorLine=0
+JumpList=
+TextFolding=[]
+ViMarks=
+
+[view-settings,view=0,item:sezioni/significato_relazione-1.tex]
+CursorColumn=0
+CursorLine=534
+JumpList=
+TextFolding=[]
+ViMarks=.,534,0,[,534,0,],534,0
+
+[view-settings,view=0,item:short_report_guide.kilepr]
+CursorColumn=0
+CursorLine=0
+JumpList=
+TextFolding=[]
+ViMarks=
+
+[view-settings,view=0,item:short_report_guide.tex]
+CursorColumn=16
+CursorLine=191
+JumpList=
+TextFolding=[]
+ViMarks=.,191,32,[,191,23,],191,32

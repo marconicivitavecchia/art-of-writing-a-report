@@ -1,0 +1,22 @@
+%% Utilizzo degli acronimi:
+%% tra parentesi quadre viene definita la lunghezza massima dell'acronimo più lungo + tre caratteri
+%% Uso: \acro{<acronimo>}{<forma_estesa>}{<definizione, significato>}
+%% dove: <acronimo> è naturalmente l'acronimo, <forma_estesa> è il significato delle singole parole che
+%% lo compongono e <definizione, significato> è il quello che significa.
+%% Uso nel corpo del testo:
+%% \ac{<acronimo>}
+%% 			la prima volta che il comando viene invocato nel testo compare la <forma_estesa> seguita da <acronimo>
+%% 			tra parentesi tonde; la seconda volta che il comando viene eseguito compare solo <acronimo>
+%% \acs{<acronimo>}
+%%			nel testo viene stampato solo l'acronimo
+%%
+\begin{acronym}[1234567]
+\acro{Oef}{Operation Enduring Freedom}{. È il nome con cui il governo degli Stati Uniti ha deciso di indicare alcune delle operazioni militari condotte dopo gli attentati dell'11 settembre 2001.}
+%%
+\acro{Isaf}{International Security Assistance Force}{. Missione di supporto al governo dell'Afghanistan che opera sulla base di una risoluzione dell'ONU.}
+%%
+\acro{Bro}{Border Roads Organisation}{. Organizzazione che ha lo scopo di mantenere e manutenere le vie di collegamento che si trovano lungo il confine indiano.}
+%%
+\acro{Icos}{International Council on Security and Development}{. Think tank internazionale che concentra la sua attenzione in particolari aree di crisi come l'Afghanistan, l'Iraq o la Somalia.}
+\end{acronym}
+

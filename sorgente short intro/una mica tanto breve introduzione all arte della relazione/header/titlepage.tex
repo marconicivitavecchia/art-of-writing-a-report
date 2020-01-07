@@ -1,0 +1,146 @@
+%\newcommand{\bandaprimapagina}{%
+%    \begin{minipage}[t]{35mm}%
+%			\color[gray]{0.87}
+%			\rule{35mm}{\paperheight}%   
+%		\end{minipage}%
+%}
+%\backgroundsetup{
+%  placement=top,
+%  angle=0,
+%  scale=1,
+%  vshift=2mm,
+%  contents={\bandaprimapagina},position={-8mm,24.55mm},
+%}%
+%\offbande
+%%
+
+\pgfmathsetmacro{\uaWh}{\paperwidth}
+\pgfmathsetmacro{\uaXh}{0.2\paperheight}
+\pgfmathsetmacro{\uaYh}{0.125\paperheight}
+\pgfmathsetmacro{\uaXMYh}{\uaXh-\uaYh}
+\pgfmathsetmacro{\uaRh}{0.5*\uaWh/\uaXMYh*\uaWh+0.5*\uaXMYh}
+\pgfmathsetmacro{\uaQh}{\uaRh-\uaXh+\paperheight}
+\pgfmathsetmacro{\uaWba}{0.4*\paperwidth}
+\pgfmathsetmacro{\uaSba}{0.125*\paperheight}
+\pgfmathsetmacro{\uaXMYba}{0.02\paperheight}
+\pgfmathsetmacro{\uaRba}{0.5*\uaWba/\uaXMYba*\uaWba+0.5*\uaXMYba}
+\pgfmathsetmacro{\uaQba}{\uaRba+\uaSba}
+\pgfmathsetmacro{\uaWbb}{0.65*\paperwidth}
+\pgfmathsetmacro{\uaSbb}{0.14*\paperheight}
+\pgfmathsetmacro{\uaXMYbb}{0.06\paperheight}
+\pgfmathsetmacro{\uaRbb}{0.5*\uaWbb/\uaXMYbb*\uaWbb+0.5*\uaXMYbb}
+\pgfmathsetmacro{\uaQbb}{\uaRbb+\uaSbb}
+\pgfmathsetmacro{\uall}{0.15*\paperwidth}
+\pgfmathsetmacro{\ual}{0.4*\paperwidth}
+\pgfmathsetmacro{\uad}{0.1in}
+\pgfmathsetmacro{\uarr}{0.85*\paperwidth}
+
+
+\newcommand{\primapagina}[4]{%
+\begin{titlepage}
+%\backgroundsetup{contents={}}%
+%%
+%%
+
+\begin{tikzpicture}[remember picture,overlay]
+      \node at (current page.center) {
+        \begin{tikzpicture}[inner sep=0pt]
+          \clip (0,0) rectangle(\paperwidth,\paperheight);
+          \filldraw [uacorpbord] (0.55\paperwidth,\uaQba pt) circle (\uaRba pt);
+          \filldraw [white] (0.35\paperwidth,\uaQbb pt) circle (\uaRbb pt);
+%\fill [lightgray] (0,0) rectangle (35mm,297mm);
+          \filldraw [uacorpblue] (0,\uaQh pt) circle (\uaRh pt);
+          \path
+          (0.95\paperwidth,0.1\paperheight)
+          node [anchor=north east] {
+%            \includegraphics[width=0.25\paperwidth]{/home/ivanterzo/Documenti/Work/scuola/loghi/logo_isis.png}
+};
+
+
+        \end{tikzpicture}
+      };
+    \end{tikzpicture}
+%%
+%%
+%%
+%%
+%	\begin{picture}(0,0)
+%		\setlength{\unitlength}{1mm}
+%		\put(0,20){%
+%		 \includegraphics{figure/logo-nFA-tondo.pdf}%
+%		}
+%	\end{picture}
+	\begin{picture}(0,0)		
+%		\bfseries\fontsize{118}{118}\selectfont
+		  \setlength{\unitlength}{1pt}
+		  %\shiftx 391%398
+		  	\put(\the\shiftx,\the\shifty){
+					\rotatebox{90}{
+						\resizebox*{\dimexpr\paperheight+\the\paperheightaddspace mm}{!}{
+							\suftitolo{I}{IS}
+							\suftitolo{G}{.}
+							\suftitolo{M}{arcon\myiW{}}
+							%\suftitolo{p}{ol\myi{}t\myiW{}c\myiW{}}
+						}
+					}
+				}
+%		  	\put(133,-246.5){%
+%				\rotatebox{90}{\suftitolo{R}{eal}\suftitolo{P}{olitik}}}
+%		  	\put(132,-246){%
+%				\rotatebox{90}{\suftitolo{F}{oreign} \suftitolo{A}{ffairs}}}
+	%	\fontsize{54}{54}\selectfont			
+	%		\put(51,-5){\suftitolo{T}{he}\suftitolo{I}{mpress}\suftitolo{.}{com}}%
+	\end{picture}
+	
+	\null\vspace{\stretch{1}}
+
+\begin{picture}(0,0)
+		  \setlength{\unitlength}{1pt}
+		  	\put(\titleshiftx,\titleshifty){% -14.17,141.732
+\begin{minipage}{\widthtitleminipage mm} %130mm
+	\Large #4
+		\vskip0.1ex
+			%\hrule
+			\rule{0.8\textwidth}{0.5px}
+		\vskip1.5ex
+\newdimen\larghezzatitolo
+\settowidth{\larghezzatitolo}{\bfseries#1}
+\resizebox{0.8\textwidth}{!}{%\dimexpr 440pt-\larghezzatitolo
+\parbox{\larghezzatitolo}{\baselineskip2.6ex\bfseries\color{uacorpbord}#2\\[1ex]}%
+%\scalebox{2}{\noindent
+%\begin{minipage}{18ex}
+%#1%\vbox{#1}
+%\end{minipage}
+}\\[1ex]
+\parbox{0.8\textwidth}{\LARGE #3\par}
+
+%	{\bfseries\fontsize{30}{30}\selectfont\color{Maroon} Il Lorem Ipsum kantiano\\[.5ex]
+%				nella retorica dei nuovi\\[1ex]
+%				media\\[1ex]}%
+%	{\LARGE La non-semantica dei metalinguaggi utilizzati\\
+%		per la generazione automatica di paragrafi\par}
+%\fontsize{20}{20}\selectfont   % altri comandi per selezionare la grandezza del font
+	%\vspace{\stretch{4}}
+\vskip\vskipdate ex
+\usebox{\data}
+%17 dicembre 2015
+%\today
+\end{minipage}
+}
+\put(\the\posworldx,\the\posworldy){% Impostazioni foglio 170x240: \put(-3.95,157){%
+		 \includegraphics[width=\the\dimworld mm]{logo_marconi/logo_marconi_white.pdf}% foglio 170x240: scale=0.18
+		}
+\end{picture}
+
+%	\parindent0pt
+%	\begin{picture}(0,0)
+%		\setlength{\unitlength}{1mm}
+%		\put(-5,1.32){%
+%		 \includegraphics[scale=0.18]{figure/mappamondo.png}%
+%		}
+%	\end{picture}
+
+	%\newpage
+	\clearpage{\pagestyle{empty}}
+\end{titlepage}
+}

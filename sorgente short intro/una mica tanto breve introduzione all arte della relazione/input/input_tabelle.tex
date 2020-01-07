@@ -1,0 +1,283 @@
+\newcommand{\numeqtab}{%
+\resizebox{\textwidth}{!}{
+\begin{tabular}{cccccccccccccc}
+%%
+\toprule
+	& \multicolumn{5}{c}{\textit{Voltometro}} & \multicolumn{5}{c}{\textit{Amperometro}} & & & \\
+%%
+               \cmidrule(lr){2-6}\cmidrule(lr){7-11}
+%% Prima riga intestazioni
+\textbf{n°}    & div. & $P_{nV}$ & $k_V$ & $V_m$ & $\eass[_V]$ &
+														div. & $P_{nA}$ & $k_A$ & $I_m$ & $\eass[_I]$ & 
+																		$R_x$ & $\eass[Rx]$ & $\erel[Rx]\%$ \\
+%% Seconda riga intestazioni
+\textbf{prova} & lette & $(\volt)$ & ($\volt/\text{div}$) & $(\volt)$ & $(\volt)$ &
+                  lette & $(\ampere)$ & ($\ampere/\text{div}$) & $(\ampere)$ & $(\ampere)$ & 
+                                                                  ($\ohm$) & ($\ohm$) & (\%) \\
+\midrule
+%%
+1   			& $nd_{V1}$ & $P_{V1}$ & $K_{V1}$ & $V_{m1}$ & $\eass[_{V1}]$ & $nd_{A1}$ & 
+																			 $P_{A1}$ & $K_{A1}$ & $I_{m1}$ & $\eass[_{I1}]$ & 
+															$R_{x_1}$ & $\eass[Rx1]$ & $\erel[Rx1]$ \\
+%%
+2   			& $nd_{V2}$ & $P_{V2}$ & $K_{V2}$ & $V_{m2}$ & $\eass[_{V2}]$ & $nd_{A2}$ & 
+                                      $P_{A2}$ & $K_{A2}$ & $I_{m2}$ & $\eass[_{I2}]$ & 
+															$R_{x_2}$ & $\eass[Rx2]$ & $\erel[Rx2]$ \\
+%%
+$\vdots$  &	$\vdots$	& $\vdots$	& $\vdots$	&	$\vdots$	&	$\vdots$  &	$\vdots$	& 
+					$\vdots$	& $\vdots$	&	$\vdots$	& $\vdots$	& $\vdots$	&	$\vdots$	&	$\vdots$  \\
+%%
+k   			& $nd_{Vk}$ & $P_{Vk}$ & $K_{Vk}$ & $V_{mk}$ & $\eass[_{Vk}]$ & $nd_{Ak}$ & 
+                                      $P_{Ak}$ & $K_{Ak}$ & $I_{mk}$ & $\eass[_{Ik}]$ & 
+														$R_{x_k}$ & $\eass[Rxk]$ & $\erel[Rxk]$ \\
+\bottomrule
+\end{tabular}
+}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\unitytab}{%
+\begin{tabular}{llc}
+\toprule
+\multicolumn{1}{c}{\textit{Grandezza}} & \multicolumn{1}{c}{\textit{Unità SI}} & \textit{Simbolo} \\
+\midrule
+Lunghezza                       & metro        & $\meter$     \\
+Massa                           & chilogrammo  & $\kg$        \\
+Tempo                           & secondo      & $\second$    \\
+Intensità di corrente elettrica & ampere       & $\ampere$    \\
+Temperatura termodinamica       & grado Kelvin & $\kelvin$    \\
+Intensità luminosa              & candela      & $\candela$   \\
+Quantità di materia             & mole         & $\mole$      \\
+Angolo piano                    & radiante     & $\rad$       \\
+Angolo solido                   & steradiante  & $\steradian$ \\    
+\bottomrule
+\end{tabular}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\unityderivatetab}{%
+\begin{tabular}{lllc}
+\toprule
+\multicolumn{1}{c}{\textit{Grandezza}} & \multicolumn{1}{c}{\textit{Unità SI}} & 
+																				\multicolumn{1}{c}{\textit{Nome}} & \textit{Simbolo} \\
+\midrule
+Forza                         & $\meter * \kg * \second^{-2}$                        & 
+																				newton                            & $\newton$        \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Pressione                     & $\meter^{-1} * \kg * \second^{-2}$                   &
+																				pascal                            & $\pascal$        \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Frequenza                     & $\second^{-1}$                                       & 
+																				hertz                             & $\hertz$         \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Energia, Lavoro               & $\meter^2 *\kg *\second^{-2}$                        & 
+																				joule                             & $\joule$         \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Potenza, Flusso energetico    & $\meter^2 *\kg*\second^{-3}$                         & 
+																				watt                              & $watt$           \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Carica elettrica              & $\second * \ampere$                                  & 
+																				coulomb                           & $\coulomb$       \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Potenziale elettrico          & $\meter^2 * \kg * \second^{-3} * \ampere^{-1}$       & 
+																				volt                              & $\volt$          \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Capacità elettrica            & $\meter^{-2} * \kg^{-1} * \second^4 * \ampere^2$     & 
+																				farad                             & $\farad$         \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Resistenza elettrica          & $\meter^2 * \kg * \second^{-3} * \ampere^{-2}$       & 
+																				ohm                               & $\ohm$           \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Conduttanza elettrica         & $\meter^{-2} * \kg^{-1} * \second^{3} * \ampere^{2}$ & 
+																				siemens                           & $\siemens$       \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Induzione magnetica           & $\kg * \second^{-2} * \ampere^{-1}$                  & 
+															          tesla                             & $\tesla$         \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Flusso di induzione magnetica & $\meter^2 *\kg *\second^{-2} *\ampere^{-1}$          & 
+																				weber                         & $\weber$             \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Induttanza                    & $\meter^2 * \kg * \second^{-2} *\ampere^{-2}$        & 
+																				henry                         & $\henry$             \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Flusso luminoso               & $\candela * \steradian$                              & 
+																				lumen                         & $\lumen$             \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Illuminamento                 & $\meter^{-2} * \candela * \steradian$                & 
+																				lux & $\lux$                                         \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Attività sorgente radioattiva & $\second^{-1}$                                       & 
+																				becquerel & $\becquerel$                             \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Dose assorbita                & $\meter^2 * \second^{-2}$                            & 
+                                        gray      & $\gray$                                  \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Equivalente di dose           & $\meter^2 * \second^{-2}$                            & 
+                                        sievert   & $\sievert$                               \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bottomrule
+\end{tabular}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\multiplisottomultipli}{%
+\begin{tabular}{@{}ccc|ccc@{}}
+\toprule
+\multicolumn{3}{c|}{\textbf{Sottomultipli}} & \multicolumn{3}{c}{\textbf{Multipli}} \\
+\midrule
+\textit{Prefisso} & \textit{Valore} & \textit{Simbolo} & 
+																	\textit{Prefisso} & \textit{Valore} & \textit{Simbolo} \\
+\midrule
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+deci    &   $10^{-1}$   &  $\deci$    &  deca   &   $10^{1}$        &   $\deca$          \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+centi   &   $10^{-2}$   &  $\centi$   &  etto   &   $10^{2}$        &   $\hecto$         \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+milli   &   $10^{-3}$   &  $\milli$   &  kilo   &   $10^{3}$        &   $\kilo$          \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+micro   &   $10^{-6}$   &  $\micro$   &  mega   &   $10^{6}$        &   $\mega$          \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+nano    &   $10^{-9}$   &  $\nano$    &  giga   &   $10^{9}$        &   $\giga$          \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+pico    &   $10^{-12}$  &  $\pico$    &  tera   &   $10^{12}$       &   $\tera$          \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+femto   &   $10^{-15}$  &  $\femto$   &  peta   &   $10^{15}$       &   $\peta$          \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+atto    &   $10^{-18}$  &  $\atto$    &  exa    &   $10^{18}$       &   $\exa$           \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+zepto   &   $10^{-21}$  &  $\zepto$   &  zetta  &   $10^{21}$       &   $\zetta$         \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+yocto   &   $10^{-24}$  &  $\yocto$   &  yotta  &   $10^{24}$       &   $\yotta$         \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\bottomrule
+\end{tabular}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\cifresignificative}{%
+\begin{tabular}{@{}cccc@{}}
+\toprule
+\textit{Valore} & \textit{Cifra}   & \textit{Cifra più}     & \textit{Numero di cifre} \\
+\textit{Valore} & \textit{incerta} & \textit{significativa} & \textit{ significative}  \\
+\midrule
+$1.9$          & $9$ & $1$ & $2$ \\
+$1,90$         & $0$ & $1$ & $3$ \\
+$1,900$        & $0$ & $1$ & $4$ \\
+$3751$         & $1$ & $3$ & $4$ \\
+$10,10$        & $0$ & $1$ & $4$ \\
+$0,0000002203$ & $3$ & $2$ & $4$ \\
+$0,0000002200$ & $0$ & $2$ & $4$ \\
+\bottomrule
+\end{tabular}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tabindice}{%
+\begin{tabular}{>{\itshape}c >{\itshape}c >{\itshape}c >{\itshape}c >{\itshape}c >{\itshape}c}
+%%
+\toprule
+{\normalfont\textbf{Colonna indice}} &  & \multicolumn{4}{c}{\textbf{Colonne dati}} \\
+\midrule
+%%
+$\overbrace{\text{\hspace{25mm}}}$ & \multicolumn{5}{c}{$\overbrace{\text{\hspace{60mm}}}$} \\
+entrata 1 &  & cella 1.1 & cella 1.2 & $\cdots$ &  cella 1.m \\
+entrata 2 &  & cella 2.1 & cella 2.2 & $\cdots$ &  cella 2.m \\
+$\vdots$  &  & $\vdots$  & $\vdots$ & $\vdots$ &  $\vdots$ \\
+entrata n &  & cella 1.m  & cella n.2 & $\cdots$ & cella n.m \\
+\bottomrule
+\end{tabular}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tabesempioaA}{%
+\begin{tabularx}{0.7\textwidth}{ccccc>{\centering\arraybackslash}X}
+%%
+\toprule
+               & \multicolumn{2}{c}{\textit{Voltometro}} & \multicolumn{2}{c}{\textit{Amperometro}} & \\
+               \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{n°}    & div.  & $V_m$     & div.  & $I_m$        & $R_m=\frac{V_m}{I_m}$ \\
+\textbf{prova} & lette & $(\volt)$ & lette & $(\ampere)$  &      ($\ohm$)         \\
+\midrule
+%%
+1   			& $141,5$ 	&	$14,15$ 	&	$69,7$		& $0,349$ 	& $40,54$	 \\
+%%
+2   			& $136,9$ 	&	$13,69$ 	&	$67,0$ 		&	$0,335$	 	& $40,87$ 	\\
+%%
+$\vdots$  &	$\vdots$	& $\vdots$	& $\vdots$	&	$\vdots$	&	$\vdots$  \\
+%%
+n   			& $101,5$		&	$10,15$ 	& $49,9$		& $0,249$		& $40,76$		\\
+\bottomrule
+\end{tabularx}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tabgrigliata}{%
+\begin{tabular}{|c|c|c|c|c|}
+%%
+\hline
+\textbf{Colonna 1} & \textbf{Colonna 2} & \textbf{Colonna 3} & $\cdots$ & \textbf{Colonna m}\\
+\hline
+%%
+dato 1.1 & dato 1.2 & dato 1.3 & $\cdots$ &  dato 1.m \\
+\hline
+dato 2.1 & dato 2.2 & dato 2.3 & $\cdots$ &  dato 2.m \\
+\hline
+$\vdots$  & $\vdots$  & $\vdots$ & $\vdots$ &  $\vdots$ \\
+\hline
+dato n.1 & dato n.2 & dato n.3 & $\cdots$ &  dato n.m \\
+\hline
+\end{tabular}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tabalternata}{%
+\begin{tabularx}{0.7\textwidth}{ccccc>{\centering\arraybackslash}X}
+%%
+\toprule
+               & \multicolumn{2}{c}{\textit{Voltometro}} & \multicolumn{2}{c}{\textit{Amperometro}} & \\
+               \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+\textbf{n°}    & div.  & $V_m$     & div.  & $I_m$        & $R_m=\frac{V_m}{I_m}$ \\
+\textbf{prova} & lette & $(\volt)$ & lette & $(\ampere)$  &      ($\ohm$)         \\
+\midrule
+%%
+1   			& $141,5$ 	&	$14,15$ 	&	$69,7$		& $0,349$ 	& $40,54$	 \\
+%%
+\rowcolor[gray]{0.9}
+2   			& $136,9$ 	&	$13,69$ 	&	$67,0$ 		&	$0,335$	 	& $40,87$ 	\\
+%%
+$\vdots$  &	$\vdots$	& $\vdots$	& $\vdots$	&	$\vdots$	&	$\vdots$  \\
+%%
+\rowcolor[gray]{0.9}
+n   			& $101,5$		&	$10,15$ 	& $49,9$		& $0,249$		& $40,76$		\\
+\bottomrule
+\end{tabularx}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tabtestuale}{%
+\begin{tabularx}{0.9\textwidth}{lXX}
+\toprule
+\multicolumn{1}{c}{\textit{Periodo}} & \multicolumn{1}{c}{\textit{Fenomeni geologici}} &
+																					\multicolumn{1}{c}{\textit{Biosfera}} \\
+\midrule
+\textbf{Giurassico} & Periodo caratterizzato da variazioni del
+livello del mare; prevalenza delle terre emerse in America, Asia,
+Australia. & Fauna: compaiono i primi marsupiali; dominano i grandi
+rettili (dinosauri). Flora: predominano le conifere. \\
+\midrule
+\textbf{Triassico} & Intensa l’erosione dei continenti; profonde
+fratture da cui escono lave che originano altopiani estesi.
+& Fauna: si diffondono i rettili; nei mari prosperano pesci e
+invertebrati. Flora: si sviluppano alghe caratteristiche. \\
+\bottomrule
+\end{tabularx}
+}

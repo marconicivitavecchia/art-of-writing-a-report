@@ -1,0 +1,112 @@
+%% I package che seguono vengono caricati automaticamente dalla classe suftesi
+%% calc, caption, enumitem, emptypage, epigraph, fancyhdr, fontenc, footmisc, geometry,
+%% ifluatex, ifxetex, iwona, mathpazo, metalogo, microtype, mparhack, multicol, textcase,
+%% titlesec, titletoc, varioref
+
+%caption, color, crop, enumitem, emptypage, extramarks, fancyhdr, fixltxhyph,
+%fontenc, geometry, ifxetex, ifluatex, ifthen, microtype, multicol, textcase,
+%titlesec, titletoc, xkeyval; substitutefont and fontenc (pdfLATEXonly); lmodern
+%(defaultfont=standard); textcomp, newpxtext, biolinum, inconsolata, newpxmath,
+%mathalpha (defaultfont=palatino); textcomp, libertine, biolinum, inconsolata,
+%newtxmath, mathalpha (defaultfont=libertine); textcomp, cochineal, biolinum,
+%inconsolata, newtxmath, mathalpha (defaultfont=cochineal); mathpazo,
+%beramono (defaultfont=compatibility).
+
+% quando suftesi viene caricata con l'opzione defaultfont di deafult (cochineal)
+% oppure libertine, viene caricato il package newtxmath che crea incompatibilità,
+% se caricato a parte con il comando \usepackage{amsthm},
+% con il package amsthm per il comando \openbox già definito in newtxmath alla linea
+% 1772 (\DeclareRobustCommand{\openbox}{}).
+% Analogamente accade se suftesi viene caricata con l'opzione defaultfont=palatino. In
+% questo caso l'incompatibilità è nel package newpxmath dove alla linea 1503 viene
+% dichiarato il comando: \DeclareRobustCommand{\openbox}{}.
+% per risulvere momentaneamente il problema, caricare suftesi con l'opzione
+% defaultfont=compatibility
+
+%\usepackage{minitoc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[babel,italian=guillemets]{csquotes}
+\usepackage{makeidx}
+	\makeindex
+%\usepackage[babel]{csquotes}
+\usepackage[backend=bibtex,backref,style=alphabetic,indexing]{biblatex}
+%	\bibliography{bibliografia/biblio}
+%% geometry: da non usare con la classe suftesi
+%\usepackage[
+%top=3cm,
+%bottom=3.2cm,
+%left=3cm, right=3cm,
+%paper=a4paper,
+%centering,
+%pdftex,
+%vcentering,
+%marginratio=1:1]{geometry}
+%\geometry{paper=a4paper,top=3cm,bottom=3cm}
+\geometry{
+%  top=15mm,
+	includehead,
+  includefoot,
+%  headsep=2cm,
+%  footskip=23mm,
+  heightrounded,
+}
+%\usepackage[svgnames]{xcolor}
+\usepackage{autobreak} % serve per andare acapo con le equazioni
+	\allowdisplaybreaks
+	
+\usepackage{tabto}  % serve per le tabulazioni senza utilizzare l'ambiente "tabbing"
+
+%%	Inserito in mip.sty
+%%\usepackage{xspace} % serve per evitare che le parole che seguono nuovi comandi testuali
+										% siano attaccate al testo definito da queli stessi comandi
+										% Per esempio: \newcommand{\tred}{\textsc{3d}} senza nulla produce
+										% quando invocato: "...bla bla bla \tredbla bla bla"
+										% il comando \newcommand{\tred}{\textsc{3d}\xspace} compone il testo:
+										% "bla bla bla \tred bla bla ..."
+
+\usepackage[processing,arduino]{maker}  % serve per introdurre codice C con le caratteristiche
+                    % tipiche del codice di Arduino
+                    
+\usepackage{cancel}	% permette di porre una barra per le sempleficazioni delle equazioni
+
+%% package inserito in theimpress.sty e mip.sty in data 10/04/2018
+%%\usepackage{icomma} % serve a evitare che i numeri dopo virgola siano distanziati
+                    % viene usato al posto del comando \num{<n,m>} dove n,m è un
+                    % numero decimale in cui n è la parte intera e m quella frazionaria.
+										%	Se in modalità matematica si vogliono distanziare lettere e numeri
+										%	basta inserire uno spazio. Per esempio: f(x, y)
+										
+\usepackage{circuitikz} % per fare circuiti elettrici ed elettronici
+																
+\usepackage{calc}		%	Permette di fare calcoli. Usato prevalentemente per scrivere
+										%	nuovi comandi
+\usepackage{float}	% Permette di definire o ridefinire gli stili degli oggetti
+										% flottanti
+\usepackage{fontawesome}
+\usepackage{mip} 	%% package MarconiInstitutePress.
+\usepackage{tabularx} %% estensione del package booktabs. Permette di fare celle che permettono
+                      %% di andare automaticamente a capo, allineamento verticale ecc
+\usepackage{diffcoeff} %% per scrivere facilemte equazioni differenziali, parziali ecc
+\usepackage{witharrows}
+\usepackage{afterpage} %% serve per fare il flush delle immagini che senza continuerebbero
+                       %% ad essere spinte pagina dopo pagina, sezione dopo sezione ad 
+                       %% essere spinte verso le ultime pagine. Sintassi:
+                       %% \afterpage{\clearpage}
+                       
+\usepackage{colortbl}  %% Per colorare righe e colonne di tabelle
+                       
+%\usepackage[inline]{showlabels}	% opzione "right" per vedere le label,
+																%"final" nella stesura finale
+																
+\usepackage{enumitem}
+\usepackage{lscape}   %% per ruotare tabelle e figure
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{draftwatermark}
+\SetWatermarkText{Draft}
+\SetWatermarkFontSize{8cm}
+% Il comando che segue e' da usare unitamente al package draftwatermark
+\SetWatermarkLightness{0.95}

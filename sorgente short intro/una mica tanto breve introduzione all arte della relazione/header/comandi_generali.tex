@@ -1,0 +1,99 @@
+%% Comando per indicare il prodotto con il punto centrale
+%% Inserito cin mip.sty
+%% Sintassi: A*B --> A·B							
+%\mathcode`\*="8000
+%{\catcode`\*\active\gdef*{\!\cdot\!}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% comando per fare una serie di trattini che riempono la pagina
+%% orizzontalmente
+\def\dashfill{\hbox to \hsize{\cleaders\hbox{-}\hfill\hfil}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Per comporre un vettore in bold. Sintassi \vect{v_1}
+\DeclareRobustCommand{\vect}[1]{
+  \ifcat#1\relax
+    \boldsymbol{#1}
+  \else
+    \mathrm{\textbf{#1}}
+  \fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Centra il contenuto di una cella di una tabella
+%% Sintassi: \cell{<testo_cella>}{<separatore_colonna>}
+%% dove <separatore_colonna> è per esempio |
+\newcommand{\ccell}[2]{\multicolumn{1}{c#2}{\textbf{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Per inserire figure in una signola colonna si
+%% può utilizzare l'ambiente \begin{Figure} definito come segue.
+%% Uso (occorre il package caption):
+%% \begin{Figure}
+%%		\centering
+%%    \includegraphics[width=\textwidth]{figure/braccio_meccanico_small.png}%
+%%    \captionof{figure}{figura 1}
+%%    \label{fig:uno}
+%% \end{Figure}
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Oppure, caricando il package float:
+%% \begin{figure}[H]%[htb!] %option=htb
+%%		\centering
+%%		\includegraphics[width=0.3\textwidth]{figure/braccio_meccanico_small.png}%
+%%		\caption{figura 1}
+%%		\label{fig:uno}
+%% \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\copyleft}{\reflectbox{\copyright}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% comando per fare una serie di trattini che riempono la pagina
+%% orizzontalmente
+\def\dashfill{\hbox to \hsize{\cleaders\hbox{-}\hfill\hfil}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comando per comporre una figura o una tabella
+%% sull'intera larghezza della pagina
+%% Parametri
+%%	#1	posizione:	htbp!
+%% 	#2	larghezza:	0 - 1
+%%	#3	path e nome file (p.e. figure/abc.pdf)
+%%	#4	testo del caption
+%%	#5	nome label
+%%	SINTASSI: \figtwocol{htbp!}{<num_tra_0_e_1>}{<path>/<nome_file>}{<caption>}{<label>}
+\newcommand{\figtwocol}[5]{%
+\end{multicols}
+%%
+\begin{figure*}[#1] %option=htb
+\centering
+    \includegraphics[width=#2\textwidth]{#3}%
+    \caption{#4}\label{#5}
+\end{figure*}
+%%
+\begin{multicols}{2}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\segue}{\quad\Rightarrow\quad}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\hlight}[1]{\textcolor{Maroon}{\sffamily#1}}
+\newcommand{\hlightit}[1]{\textcolor{Maroon}{\sffamily\textit{#1}}}
+\newcommand{\maroon}[1]{\textcolor{Maroon}{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Per cambiare al volo i margini di un paragrafo
+%% Sintassi: 
+%%             \begin{changemargin}{rs}{rd} 
+%%                paragrafo da far rietrare
+%%             \end{changemargin}
+%% dove rs e rd sono i rientri destro e sinistro
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+
+

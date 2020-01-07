@@ -1,0 +1,19 @@
+%% imposta filetto separazione colonne e loro distanza
+\setlength\columnseprule{.4pt}
+\setlength\columnsep{1.5pc}
+
+%% il comando che segue serve ad evitare che nell'indice vengano composte le opere presenti in
+%% bibliografia complete anche del titolo. La nuova dichiarazione permette quindi l'inclusione
+%% nell'indice analitico del solo autore
+\DeclareIndexFieldFormat{indextitle}{}{}{}
+
+%%% imposto la Lunghezza dell'epigrafe
+%\begingroup
+\setlength{\epigraphwidth}{6cm}
+%\endgroup
+
+%% imposto la numerazione delle pagine degli indici e quelle del testo
+\makeatletter
+\renewcommand{\frontmatter}{\cleardoublepage\@mainmatterfalse\pagenumbering{roman}}
+\renewcommand{\mainmatter}{\cleardoublepage\@mainmattertrue\pagenumbering{arabic}}
+\makeatother

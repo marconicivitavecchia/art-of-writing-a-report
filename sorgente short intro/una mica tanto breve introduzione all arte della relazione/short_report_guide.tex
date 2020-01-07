@@ -1,0 +1,273 @@
+\documentclass[tocstyle=ragged,%
+chapfont=smallcaps,secfont=smallcaps,%
+partfont=smallcaps,partstyle=parright,headerstyle=inner,%
+pagelayout=periodical,12pt,italian,crop=false,mathfont=extended,%
+documentstructure=article,style=sufelements,svgnames]{suftesi}%,fleqn
+\usepackage{graphicx}
+%% aggiungendo l'opzione openany i nuovi capitoli NON vengono aperti su pagine dispari e destre
+%% ma in qualsiasi pagina
+
+
+\input{header/package}
+
+\input{header/redifinizione_comandi}
+\input{header/comandi_generali}
+\input{header/comandi_informatica}
+\input{header/comandi_elettr}
+
+\input{input/input_tabelle}
+
+%\captionsetup{belowskip=12pt,aboveskip=4pt}
+%\captionsetup{aboveskip=3pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%													
+%%%%%%%%%%%%%%% PER AVERE L'INDICE SU DUE COLONNE %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Da decommentare se non lo si vuole
+%%
+%\setcounter{secnumdepth}{2}																			%%
+%\setcounter{tocdepth}{2}																					%%
+%\usepackage[lof,lot,toc]{multitoc}																%%
+%\renewcommand*{\multicolumntoc}{2}																%%
+%\setlength{\columnseprule}{1pt}																	%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+												
+% code128 Macro for conversion of string to barcodes by Code 128 standard
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{code128}
+
+\input{impostazioni/pre-begin}
+
+\pagedim{a4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \filetto{0} = colonne senza filetto
+%% \filetto{1} = colonne con filetto
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\filetto{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% numero della rivista
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\numerorivista{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FILE DELLA BIBLIOGRAFIA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliofile{bibliografia/biblio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% META-INFORMAZIONI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{pdfauthor={ISS G. Marconi},%
+            pdftitle={A not so short introduction to the art of writing a report},%
+            pdfsubject={Una (mica tanto) breve introduzione all'arte di scrivere una relazione},%
+            pdfkeywords={ISS Marconi, Civitavecchia Dark City,tutorial, report, relazione, Ivano Giannini},%
+            pdfproducer={LaTeX},%
+            pdfcreator={Ivano Giannini -- ivanTerzo}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\makeatletter
+  \renewcommand\chaptermark[1]{%
+  \markboth{\small\textcolor{gray}{\chaptername\ \thechapter. #1}}{}}
+  \renewcommand\sectionmark[1]{%
+  \markright{\small\textcolor{gray}{\thesection. #1}}}
+  \renewcommand{\footnoterule}{\kern10pt \hrule width 1in \kern 2.6pt}
+\makeatother
+%\pagenumbering{roman}
+\offbande
+%%\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% INSERIMENTO COPERTINA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sintassi:
+% \frontpagedate{1|data_manuale}{<testo>}
+% se il primo argomento è = 1 la data viene composta automaticamente tramite il comando \today
+% altrimenti la data viene composta utilizzando una qualsiasi combinazione di
+% giorno, mese e anno letterali, alfanumerici o numerici. Il secondo argomento è un testo
+% anche nullo che precede la data (per esempio SG n. \usebox{\valorenumrivista} -- )
+\frontpagedate{02022020 (back to the future)}{\Large\textbf{Marconi Institute Press} --}
+\input{header/titlepage}
+%%	\primapagina{<caratteri_per_stabilire_la_larghezza>}
+%%		{<titolo>}
+%%			{<titolo_breve>}
+%%				{<autori>}
+\primapagina{A not (so short) introduction x}% to the of}%
+	{A (not so) short introduction to the art of writing a report}%
+		{Una (mica tanto) breve introduzione all'arte di scrivere una relazione}%
+			{Ivano Giannini}
+
+\offbande
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COLOPHON VARI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bookcolophon{Questa pagina è intenzionalmente bianca}{}
+
+%\finalcolophon{%
+%        \textsc{%
+%                theimpress.com~--~\textcolor{Maroon}{M}anuali\textcolor{Maroon}{A}b%
+%                  \textcolor{Maroon}{I}mis
+%                }
+%              }{2014}
+\clearpage
+%\colophon[Linux]{theimpress.com}{}
+%\bookcolophon{Copyleft \copyleft\ 2017 theimpress.com}{Typeset by \LaTeXe\ on Linux.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\dedica{%
+%		\includegraphics[width=0.7\textwidth]{figure/marcus_and_gulab-bis.jpg}\\%
+%											Dedicated to the men of Operation \textit{Red Wings}
+%}
+
+\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COMANDI DA USARE CON IL PACKAGE
+%%					MINITOC
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\mtcfont}{\footnotesize\rmfamily}
+%\renewcommand{\mtcSfont}{\footnotesize\rmfamily}
+%\renewcommand{\mtifont}{\small\sffamily}
+%\nomtcrule
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% I N D I C E   G E N E R A L E %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{roman}\setcounter{page}{1}
+%\dominitoc % DA USARE CON IL PACKAGE MINITOC
+\indexhead
+\tableofcontents
+\listoffigures
+\listoftables{}
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SALTO DI PAGINA BIANCA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\blankpage
+
+\frontmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% I N T R O D U Z I O N E %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\introduzione
+\input{sezioni/introduzione}
+%%\lipsum[6-7]
+
+\blankpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% G L O S S A R I O %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%\abbreviazioni
+%\pagenumbering{arabic}
+%\input{acronimi/acronimi}
+
+\mainmatter
+
+\headfootset
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% S E Z I O N I %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{multicols}{2}
+\pagenumbering{arabic}
+%%
+\input{sezioni/significato_relazione-1}
+\input{sezioni/grafici_e_tabelle}
+\input{sezioni/citazioni_e_biblio}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% A P P E N D I C I %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\appendici
+
+%\input{appendici/platformio_board.tex}
+%\input{appendici/avrdude.tex}
+
+%\subsection{Lorem ipsum}
+%\lipsum[6-7]
+%%
+%\subsection{kantlipsum}
+%\kant[6-11]
+%\end{multicols}
+
+%\backmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% B I B L I O G R A F I A %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\blankpage
+\biblio
+%\defbibheading{citata}{\subsection{Bibliografia citata nel testo}}
+\defbibheading{approfondimento}{\subsection{Bibliografia di approfondimento}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliografia Citata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\defbibheading{citata}{}
+%\defbibheading{approf}{}
+%\defbibnote{citata}{}
+%\defbibnote{approf}{}
+%\phantomsection
+%\addcontentsline{toc}{subsection}{Bibliografia citata nel testo}%\nocite{*}
+%\printbibliography[keyword={citata},heading={subbibliography}, title=Bibliografia citata nel testo]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliografia Non Citata
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\phantomsection
+\addcontentsline{toc}{subsection}{Bibliografia di approfondimento}
+\nocite{*}
+\printbibliography[keyword={approf},heading={subbibliography}, title=Bibliografia di approfondimento]
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% I N D I C E %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\blankpage
+%\indice
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Q U A R T A   DI   C O P E R T I N A %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sintassi:
+% \quartadicopertina{testo_qr|url}{0|1}{<testo_quarta_copertina>}
+% Se il primo valore passato è = 0 non viene composto il codice a barre
+% SE il secondo valore è = 0 il QR non ha link, se invece è = 1 viene composto come link
+\quartadicopertina{http://www.marconicivitavecchia.it}{1}{MarconiInstitutePress}%ManualiAbImis
+
+\end{document}
+
+
+%%%%%% INSERIRE FIGURA NELLA COLONNA:
+
+\begin{figure}[H]%[htb!] %option=htb
+\centering
+    \includegraphics[width=0.8\linewidth]{figure/braccio_meccanico_small.png}%
+    \caption{Braccio meccanico realizzato nel fablab.}
+    \label{fig:uno}
+\end{figure}
+
+%%%%%% INSERIRE FIGURA A LARGHEZZA PAGINA:
+
+\figtwocol{htbp!}{<num_tra_0_e_1>}{<path>/<nome_file>}{<caption>}{<label>}
+

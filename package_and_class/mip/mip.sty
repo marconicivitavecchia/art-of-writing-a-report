@@ -1,0 +1,1157 @@
+%% Copyright (C) 2016-2019 by Ivano Giannini
+%% This work is licensed under the Creative Commons Attribution 3.0
+%% This package is constantly changing.
+%% The use of the suftesi v2.6 A class is required.
+%% 
+%%                  XXXX
+%%                 X    XX
+%%                X  ***  X                XXXXX
+%%               X  *****  X            XXX     XX
+%%            XXXX ******* XXX      XXXX          XX
+%%          XX   X ******  XXXXXXXXX                XX XXX
+%%        XX      X ****  X                           X** X
+%%       X        XX    XX     X                      X***X
+%%      X         //XXXX       X                      XXXX
+%%     X         //   X                             XX
+%%    X         //    X          XXXXXXXXXXXXXXXXXX/
+%%    X     XXX//    X          X
+%%    X    X   X     X         X 
+%%    X    X    X    X        X 
+%%     X   X    X    X        X                    XX
+%%     X    X   X    X        X                 XXX  XX
+%%      X    XXX      X        X               X  X X  X
+%%      X             X         X              XX X  XXXX
+%%       X             X         XXXXXXXX\     XX   XX  X
+%%        XX            XX              X     X    X  XX
+%%          XX            XXXX   XXXXXX/     X     XXXX
+%%            XXX             XX***         X     X
+%%               XXXXXXXXXXXXX *   *       X     X
+%%                            *---* X     X     X
+%%                           *-* *   XXX X     X
+%%                           *- *       XXX   X
+%%                          *- *X          XXX
+%%                          *- *X  X          XXX
+%%                         *- *X    X            XX
+%%                         *- *XX    X             X
+%%                        *  *X* X    X             X
+%%                        *  *X * X    X             X
+%%                       *  * X**  X   XXXX          X
+%%                       *  * X**  XX     X          X
+%%                      *  ** X** X     XX          X
+%%                      *  **  X*  XXX   X         X
+%%                     *  **    XX   XXXX       XXX
+%%                    *  * *      XXXX      X     X
+%%                   *   * *          X     X     X
+%%     =======*******   * *           X     X      XXXXXXXX\
+%%            *         * *      /XXXXX      XXXXXXXX\      )
+%%       =====**********  *     X                     )  \  )
+%%         ====*         *     X               \  \   )XXXXX
+%%    =========**********       XXXXXXXXXXXXXXXXXXXXXX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% PACKAGE NECESSARI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{amsmath}
+%\RequirePackage{amsthm} VIENE CARICATO AUTOMATICAMENTE DA suftesi quando si usa l'opzione mathfont=extended,
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb,marvosym}
+%\RequirePackage{amstext}
+\RequirePackage{textcomp}
+\RequirePackage{aecompl}
+\RequirePackage{acronym}
+\RequirePackage{ivanterzo}
+%\RequirePackage{bytefield}
+\RequirePackage{qwertz}
+%\RequirePackage{url}
+\RequirePackage{epsfig}
+\RequirePackage{null}
+\RequirePackage{flow}
+%\RequirePackage{program}
+\RequirePackage{newlfont}
+\RequirePackage{fancyhdr}
+  \pagestyle{fancy}
+\RequirePackage{graphicx}
+%\RequirePackage{color}
+\RequirePackage{pifont}
+\RequirePackage{booktabs,array,rotating}
+\RequirePackage{dcolumn}
+%\RequirePackage{tocloft}
+\RequirePackage{subfig}
+\RequirePackage{wrapfig}
+%\RequirePackage[decimalsymbol=comma,alsoload=binary]{siunitx}
+%\RequirePackage{float}
+% usage of picinpar:
+%\begin{window}[1,l,\includegraphics{},caption]xxxxx\end{window}
+%%
+%%
+%\RequirePackage{draftwatermark}
+%\SetWatermarkText{Confidenziale}
+%\SetWatermarkFontSize{4cm}
+% Il comando che segue e' da usare unitamente al package draftwatermark
+%\SetWatermarkLightness{0.8}
+\RequirePackage{relsize}
+%\RequirePackage[citecolor=red,pdfpagelabels,colorlinks=true,urlcolor=blue,hyperindex,linkcolor=blue,breaklinks]{hyperref}
+%\RequirePackage[colorlinks=true,linkcolor=Maroon,citecolor=blue,draft=false]{hyperref}
+\RequirePackage[colorlinks=true,linkcolor=Maroon,citecolor=blue,%
+                        draft=false,filecolor=red,urlcolor=Maroon]{hyperref}
+%  \PassOptionsToPackage{colorlinks=true,linkcolor=Maroon,citecolor=blue,%
+%                        draft=false,filecolor=red,urlcolor=Maroon}{hyperref}
+\RequirePackage[suftesi]{frontespizio}
+%  \PassOptionsToPackage{suftesi}{frontespizio}
+\RequirePackage{longtable}
+\RequirePackage{enumitem}
+\RequirePackage{cancel}
+%\RequirePackage{multicap}
+%\RequirePackage{mymulticap} %% una copia di multicap. Modificato per avere
+														%% la label e numero in bold
+%% package caption: da non usare con la classe suftesi
+%%\RequirePackage[margin=10pt,font=small,labelfont=bf]{caption}
+%%\captionsetup{justification=centering,labelfont=bf,margin=10pt,font=small}
+\RequirePackage[margin=10pt,font={small,sf},labelfont=bf]{caption}
+\RequirePackage[nopar]{lipsum}
+%  \PassOptionsToPackage{nopar}{lipsum}
+\RequirePackage[nopar]{kantlipsum}
+%  \PassOptionsToPackage{nopar}{kantlipsum}
+\RequirePackage{background}
+\RequirePackage{epigraph}
+\RequirePackage{lettrine}
+\RequirePackage{tikz}
+\RequirePackage{qrcode}
+%\RequirePackage{menukeys}
+\RequirePackage{calc}
+\RequirePackage[imagemodifier={-eu}]{doclicense}
+%\PassOptionsToPackage{imagemodifier={-eu}}{doclicense}
+\RequirePackage{xparse} %% i due package servono per il comando \colorcap
+\RequirePackage{l3regex}
+\RequirePackage{changepage}
+\strictpagecheck
+  \providecommand{\tcbpkgprefix}{}
+\RequirePackage{\tcbpkgprefix tcolorbox}% era impostato a many
+	\PassOptionsToPackage{many}{tcolorbox}
+  \tcbuselibrary{skins,breakable,listingsutf8}
+  \tcbset{listing engine=listings}
+\RequirePackage{listings}
+
+\RequirePackage{xcolor}
+  \PassOptionsToPackage{svgnames}{xcolor}
+
+\RequirePackage{xspace} % serve per evitare che le parole che seguono il comando \tred
+                        % siano attaccate con il testo definito dallo stesso comando
+\RequirePackage[decimalsymbol=comma,alsoload=binary]{siunitx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{icomma} % serve a evitare che i numeri dopo virgola siano distanziati
+												% viene usato al posto del comando \num{<n,m>} dove n,m è un
+												% numero decimale in cui n è la parte intera e m quella frazionaria.
+												%	Se in modalità matematica si vogliono distanziare lettere e numeri
+												%	basta inserire uno spazio. Per esempio: f(x, y)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\CancelColor}{\color{red}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{uacorpbord}{cmyk}     {0.00,1.00,0.60,0.37}
+\definecolor{uacorpblue}{cmyk}     {1.00,0.25,0.00,0.50}
+\definecolor{uacorplightblue}{cmyk}{1.00,0.00,0.08,0.13}
+\definecolor{uacorporange}{cmyk}   {0.00,0.32,1.00,0.09}
+\definecolor{uaftifresh}{cmyk}     {0.34,1.00,0.00,0.00}
+\definecolor{uaftisober}{cmyk}     {0.10,1.00,0.00,0.49}
+\definecolor{lightgray}{cmyk}      {0.00,0.00,0.00,0.05}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Definizione del carattere "·" per avere     %%
+%% automaticamente il carattere definito dal   %%
+%% comando "\cdot" in modalità matematica.     %%
+%% Sintassi: A*B --> A·B
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begingroup   																 %%
+%  \lccode`~=`·																 %%
+%  \lowercase{\endgroup												 %%
+%    \def~{\!\cdot\!}%												 %%
+%  }
+\mathcode`\*="8000
+{\catcode`\*\active\gdef*{\!\cdot\!}}					 %%
+%\mathcode`¬="8000														 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\suftitolo}[2]{\textcolor{uacorpbord}{#1}\textcolor{Black!30}{#2}}
+\newcommand{\suffooter}[2]{\textcolor{uacorpbord}{#1}\textcolor{uacorpblue}{#2}}
+\newcommand{\sufpiede}[2]{\textcolor{Maroon}{#1}\textcolor{White}{#2}}
+\newcommand{\noisefromamerika}{\textcolor{Maroon}{n}\textcolor{Black!50}{o%
+							{\textcolor{Black!50}{i}\kern-.59ex\textcolor{Maroon}{\lower-1.24ex\hbox{.}}}se}%
+							\textcolor{Maroon}{F}\textcolor{Black!50}{rom}%
+							\textcolor{Maroon}{A}\textcolor{Black!50}{mer%
+							{\textcolor{Black!50}{i}\kern-.59ex\textcolor{Maroon}{\lower-1.24ex\hbox{.}}}ca}}
+
+\newcommand{\luiss}{\textcolor{Maroon}{L}\textcolor{Black!50}{\textsc{uiss}}\kern0.1ex%
+							%{\textcolor{Black!50}{i}\kern-.59ex\textcolor{Maroon}{\lower-1.24ex\hbox{.}}}ss}%
+							\textcolor{Maroon}{G}\textcolor{Black!50}{u%
+{i}\kern-.59ex\textcolor{Maroon}{\lower-1.24ex\hbox{.}}%
+do}\kern0.1ex%
+							\textcolor{Maroon}{C}\textcolor{Black!50}{arl%
+							{i}\kern-.59ex\textcolor{Maroon}{\lower-1.24ex\hbox{.}}}
+}
+
+\newcommand{\studigeopolitici}{%
+\textcolor{Maroon}{S}\textcolor{Black!50}{\textsc{tudi}}%
+\textcolor{Maroon}{G}\textcolor{Black!50}{\textsc{eopolitici}}%
+}
+
+%\newcommand{\textendpage}{%
+%\textcolor{Maroon}{M}\textcolor{Black!50}{\textsc{anuali}}%
+%\textcolor{Maroon}{A}\textcolor{Black!50}{\textsc{b}}%
+%\textcolor{Maroon}{I}\textcolor{Black!50}{\textsc{mis}}%
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comando per comporre le lettere maiuscole in colore
+\ExplSyntaxOn
+\NewDocumentCommand{\colorcap}{ O{Maroon} m }
+ {
+  \sheljohn_colorcap:nn {#1}{#2}
+ }
+\tl_new:N \l__sheljohn_colorcap_input_tl
+\cs_new_protected:Npn \sheljohn_colorcap:nn #1 #2
+ {
+  % memorizza la stringa in una variabile per essere usata con \regex_replace_all:nnN
+  \tl_set:Nn \l__sheljohn_colorcap_input_tl {#2}
+  \regex_replace_all:nnN
+   {([A-Z]+) } % search a capital letter (or more)
+   {\c{textcolor}\cB\{#1\cE\}\cB\{\1\cE\}} % sostituisce con \textcolor{#1}{<match>}
+   \l__sheljohn_colorcap_input_tl
+  \tl_use:N \l__sheljohn_colorcap_input_tl
+ }
+\ExplSyntaxOff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comando per comporre il testo a piè di pagina
+\newbox\sgtextfoot
+\newcommand{\textfoot}[1]{%
+\setbox\sgtextfoot\hbox{\textcolor{Black!60}{\colorcap{\footnotesize#1}}}
+%\sffamily\suffooter{t}{he}\suffooter{i}{mpress.}\suffooter{c}{om}~%
+%\textcolor{Black!60}{--}~\suffooter{S}{tudi}\suffooter{G}{eopolitici}
+}
+
+\newcommand{\accento}{\text{\textquotesingle}}
+
+\def\myi{\textcolor{Black!30}{$\imath$}\kern-.59ex\textcolor{uacorpbord}{\lower-1.23ex\hbox{.}}}
+\def\myiW{\textcolor{Black!30}{$\imath$}\kern-.59ex\textcolor{White}{\lower-1.23ex\hbox{.}}}
+
+
+%% Comdandi che possono essere utilizzati con l'opzione documentstructure=book
+\fancyheadoffset[LE,RO]{\marginparsep-2ex} % serve per comporre le testatine con la
+                                           % corretta larghezza
+
+\newcommand{\abbreviazioni}{%
+  \ifsuftesi@article
+    %\sectionmark{}
+    \clearpage
+    \thispagestyle{empty}
+    \subsectionmark{}
+    \phantomsection
+    \markright{}
+    \section*{Abbreviazioni}
+    \addcontentsline{toc}{section}{Abbreviazioni}
+    \fancyhead[RE,LO]{\textcolor{gray}{\textls{\small\textsc{abbreviazioni}}}}
+  \else
+		\cleardoublepage
+		\thispagestyle{plain}
+		%\chaptermark{Abbreviazioni}
+		%\markright{}
+    %\markright{Abbreviazioni}
+		\phantomsection
+		\fancyhead[RE,LO]{\textcolor{gray}{\textls{\small\textsc{abbreviazioni}}}}
+		\chapterintroname{Abbreviazioni}\chapterintro%
+	\fi	
+}
+
+\newcommand{\introduzione}{%
+  \ifsuftesi@article
+    \thispagestyle{empty}
+    %\sectionmark{}
+    \subsectionmark{}
+    \phantomsection
+    \markright{}
+    \section*{Introduzione}
+    \addcontentsline{toc}{section}{Introduzione}
+    \fancyhead[RE,LO]{\textcolor{gray}{\textls{\small\textsc{introduzione}}}}
+  \else
+    \cleardoublepage
+    \thispagestyle{plain}
+		%\chaptermark{Introduzione}
+		%\markright{Introduzione}
+		\phantomsection
+		\fancyhead[RE,LO]{\textcolor{gray}{\textls{\small\textsc{introduzione}}}}
+		\chapterintroname{Introduzione}\chapterintro%
+  \fi
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comando per comporre le testatine in grigio e il rule per le
+%% note a piè di pagina. Va inserito immediatamente dopo \begin{document}
+\newcommand{\headcolfootrule}[1]{%
+\makeatletter
+  \renewcommand\chaptermark[1]{%
+  \markboth{\small\textcolor{gray}{\chaptername\ \thechapter. ##1}}{}}
+  \renewcommand\sectionmark[1]{%
+  \markright{\small\textcolor{gray}{\thesection. ##1}}}
+  \renewcommand{\footnoterule}{\kern10pt \hrule width 1in \kern 2.6pt}
+\makeatother
+%\pagenumbering{roman}
+\offbande
+%%\pagenumbering{roman}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+%\renewcommand{\headrulewidth}{0pt}
+% Comandi per comporre oppure no il filetto in alto nelle testatine
+\newcommand{\headruleon}{\renewcommand{\headrulewidth}{0.4pt}}
+\newcommand{\headruleoff}{\renewcommand{\headrulewidth}{0pt}}
+\renewcommand{\footrulewidth}{0pt}
+
+
+%%% Composizione delle bande grigie in alto e in basso con relative figure %%%
+\newif\ifchapterpage
+
+\newcommand{\grayboxes}{%% se crop=false vengono viene eseguita la macro...
+\null
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newbox\valorenumrivista
+\newcommand{\numerorivista}[1]{\setbox\valorenumrivista\hbox{#1}}
+\newcommand{\barcoderivista}{
+\begin{picture}(0,0)
+\put(0,0){\color[gray]{0}\codeothertext{StudiGeopolitici-n.}%
+				 {theimpress.com -- StudiGeopolitici n.\usebox{\valorenumrivista}\hfill}}
+\end{picture}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\offbande}{%
+\backgroundsetup{
+  placement=top,
+  angle=0,
+  scale=1,
+  vshift=2mm,
+  contents={}%,position={59.55mm,24.55mm},
+}}
+%%
+\newcommand{\onbande}{%
+\backgroundsetup{
+  placement=top,
+  angle=0,
+  scale=1,
+  vshift=2mm,
+  contents={\grayboxes}%,position={59.55mm,24.55mm},
+}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% 		COMANDO PER OTTENERE AL CAMBIO CAPITOLO 		%%%%%%%%%%
+%%%%%%%%%% 					PAGINE COMPLETAMENTE BIANCHE 					%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\blankpage}{
+\clearpage{\pagestyle{empty}%\noindent%
+%\begin{minipage}[t][5cm][b]{0,5\textwidth}%
+%\null
+%\vspace*{95mm}
+%\noindent Questa pagina è intenzionalmente bianca
+%\end{minipage}
+\backgroundsetup{
+  placement=top,color=black,opacity=1,
+  angle=0,
+  scale=1,
+  vshift=2mm,
+  contents={%
+\parbox{\textwidth}{}
+},%position={100mm,-105mm}
+}
+\cleardoublepage}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\ifsuftesi@article
+  \fancypagestyle{headfoot}{
+  \fancyhf{}
+  \fancyhead[LE,RO]{\thepage}
+  \fancyhead[LO]{\MakeLowercase{\textls{\textsc{\rightmark}}}}
+  \fancyhead[RE]{\MakeLowercase{\textls{\textsc{\rightmark}}}}
+  }
+\else
+  \fancypagestyle{headfoot}{
+  \fancyhf{}
+  \fancyhead[LE,RO]{\thepage}
+  \fancyhead[LO]{\MakeLowercase{\textls{\textsc{\rightmark}}}} % anche \textsf{}
+  \fancyhead[RE]{\MakeLowercase{\textls{\textsc{\leftmark}}}} % anche \textsf{}
+  }
+\fi
+%\addto{\mainmatter}{\pagestyle{headfoot}}
+
+\newcommand{\indexhead}{%
+  \fancyhf{}
+  \fancyhead[LE,RO]{\thepage}
+  \fancyhead[LO]{\MakeLowercase{\textls{\textsc{\textcolor{gray}{\rightmark}}}}}
+  \fancyhead[RE]{\MakeLowercase{\textls{\textsc{\textcolor{gray}{\leftmark}}}}}
+}
+
+\newcommand{\headfootset}{%
+\thispagestyle{empty}
+\pagestyle{headfoot}
+}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bibliofile}[1]{%
+													\bibliography{#1}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\appendici}{%
+													\cleardoublepage
+													%\phantomsection
+													\appendixpage
+													\appendix
+													\fancyhead[RE,LO]{\textcolor{gray}{\textls{\small
+                      \MakeLowercase{\textsc{\appendixname}}}}}
+												}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\biblio}{%
+											\cleardoublepage
+											\phantomsection
+											\ifsuftesi@article
+												\addcontentsline{toc}{section}{\bibname}
+											\else
+												\addcontentsline{toc}{chapter}{\bibname}
+											\fi
+											\printbibheading
+											\fancyhead[RE,LO]{\textcolor{gray}{\textls{\small
+                      \MakeLowercase{\textsc{\bibname}}}}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\indice}{%
+											\cleardoublepage
+											\phantomsection
+                      \section*{\indexname}
+                      \ifsuftesi@article
+												\addcontentsline{toc}{section}{\indexname}
+                      \else
+												\addcontentsline{toc}{chapter}{\indexname}
+											\fi
+											\fancypagestyle{plain}{%serve per comporre il titolo dell'indice alla giusta altezza...
+																							\headsep=11.8mm
+																							\fancyhead{}
+																							\fancyhead[RO]{%
+%			\begin{picture}(0,0)%
+%\setlength{\unitlength}{1cm}%
+%				\put(-10.99,-0.5){\includegraphics[width=0.4\textwidth]{figure/logo_luiss_dx.png}}%(-10.99,-1.2)
+%			\end{picture}%
+}
+\fancyhead[LE]{%
+%			\begin{picture}(0,0)%
+%\setlength{\unitlength}{1cm}%-1.2
+%				\put(-0.01,-0.5){\includegraphics[width=0.4\textwidth]{figure/logo_luiss_sx.png}}%(-3,-1.2)
+%			\end{picture}%
+}
+\cfoot{}																							}
+                      \fancyhead[RE,LO]{\textcolor{gray}{\textls{\small
+                      \MakeLowercase{\textsc{\indexname}}}}}
+                      \thispagestyle{plain}
+											\printindex
+										}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sintassi:
+% \quartadicopertina{testo_qr|url}{0|1}{<testo_quarta_copertina>}
+% Se il primo valore passato è = 0 non viene composto il codice a barre
+% SE il secondo valore è = 0 il QR non ha link, se invece è = 1 viene composto come link
+\newcommand{\quartadicopertina}[3]{%
+																	\blankpage
+																	\finalcolophon{\Large\textcolor{Black!60}{\colorcap{\textsc{#3}}}}
+
+																	\artcolophon{%
+																								This work is licensed under the Creative Commons Attribution 3.0.
+																								To view a copy of this license, visit
+		\begin{center}
+			\url{http://creativecommons.org/licenses/by-nc-nd/3.0/}
+		\end{center}
+		or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.\\
+    \noindent\doclicenseImage[type={CC}, version={3.0}, modifier={by-nc-sa}, imagewidth=30mm]\\[1ex]
+		Typeset with \LaTeXe%
+	}
+	\if#10
+		\vfill
+	\else
+		\if#20
+			\vfill
+			\noindent\qrcode[version=0,nolink]{#1}
+      \rotatebox{90}{\textcolor{Black!60}{\scriptsize\hspace{-9.5mm}%
+      \resizebox*{20.5mm}{!}{\colorcap{\textsc{#3}}}}}
+			%\noindent\includegraphics[scale=0.5]{figure/#1}
+			%\rotatebox{90}{\textcolor{Maroon}{\hspace{-10mm} SG n°~\usebox{\valorenumrivista }}}
+  \else
+    \if#21
+    \vfill
+    \noindent\qrcode[version=0]{#1}
+    \rotatebox{90}{\textcolor{Black!60}{\scriptsize\hspace{-9.5mm}%
+      \resizebox*{20.5mm}{!}{\colorcap{\textsc{#3}}}}}
+    %\noindent\includegraphics[scale=0.5]{figure/#1}
+    %\rotatebox{90}{\textcolor{Maroon}{\hspace{-10mm} SG n°~\usebox{\valorenumrivista }}}
+  \fi\fi\fi
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comando per il capolettera. Sintassi:
+%% \capolettera[<num_linee>]{<capo_lettera}{<parole_o_breve_frase_che_segue>}
+%% Se l'argomento opzionale viene omesso e si scrive:
+%% \capolettera{<capo_lettera}{<parole_o_breve_frase_che_segue>}
+%% il numero di linee che limitano la capo lettera è impostato
+%% automaticamente a 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\capolettera}[3][4]{%
+	\if#2Q
+		\lettrine[lines=#1,loversize=-0.2, lraise=0.2]{\textcolor{Maroon}{Q}}{#3}
+	\else
+		\if#2A
+			\lettrine[lines=#1,slope=0.6em,findent=-1em,nindent=0.6em]{\textcolor{Maroon}{A}}{#3}
+		\else
+			\if#2V
+				\lettrine[lines=#1,slope=-0.5em,nindent=-0.5em,findent=0.4em]{\textcolor{Maroon}{V}}{#3}
+			\else
+				\lettrine[lines=#1]{\textcolor{Maroon}{#2}}{#3}
+	\fi\fi\fi
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% RIDEFINISCO IL COLOPHON PER TOGLIERE I RIFERIMENTI A SUFTESI %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\colophon}[3][]{%
+  \thispagestyle{empty}
+  \null
+    \vfill
+     \def\next{#2}
+        \ifx\next\@empty\else
+          \noindent Copyright \copyright{} \the\year~#2\\[1ex]
+          Tutti i diritti riservati
+        \fi
+  \vfill
+  {\small\noindent Typeset by \LaTeX{} %
+     \def\next{#1}
+        \ifx\next\@empty\else on #1.
+      \fi #3\par}
+      \cleardoublepage}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\dedica}[1]{%
+  \thispagestyle{empty}
+  \null
+            {\raggedleft #1
+
+}
+\vfill
+      \cleardoublepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\paragrafo}[1]{%
+\paragraph*{\normalfont\bfseries #1}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\sharia}{%
+shar\={\i}\,\ap{\rotatebox{90}{\textasciibreve}}\kern-.7ex{a}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% comando per comporre la data automaticamente o manualmente
+% Sintassi:
+% \frontpagedate{1|data_manuale}{<testo>}
+% se il primo argomento è = 1 la data viene composta automaticamente tramite il comando \today
+% altrimenti la data viene composta utilizzando una qualsiasi combinazione di
+% giorno, mese e anno letterali, alfanumerici o numerici. Il secondo argomento è un testo
+% anche nullo che precede la data (per esempio SG n. \usebox{\valorenumrivista} -- )
+\newbox\data
+\newcommand{\frontpagedate}[2]{%
+	\if#11
+		\setbox\data\hbox{#2 \Large\today}
+	\else
+		\setbox\data\hbox{#2 \Large#1}
+	\fi
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\epigraphrule}{1pt}
+\newcommand{\epigraphrulecolor}{Black!30}
+\makeatletter
+\renewcommand{\@epirule}{{\color{\epigraphrulecolor}\rule[.5ex]{\epigraphwidth}{\epigraphrule}}}
+\makeatother
+
+\newcommand{\hugequote}{%
+  {\sffamily\ttfamily\fontsize{75}{80}\selectfont%
+  \hspace*{-.5em}\color{Black!20}%
+  \textit{\glqq}%
+  \vskip -.26em}%
+}
+
+\newcommand{\epigrafe}[2]{%
+\textcolor{Black!50}{%
+%\setlength{\epigraphwidth}{4cm}
+\epigraph{%
+  \emph{%
+    \hugequote#1}
+}{#2}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% comando per evidenziare particolari periodi. Si usa come ambiente:
+%% \begin{fancyquotes}...\end{fancyquotes}
+\makeatletter
+
+\tikzset{%
+  fancy quotes/.style={
+    text width=\fq@width pt,
+    align=justify,
+    inner sep=1em,
+    anchor=north west,
+    minimum width=\linewidth,
+  },
+  fancy quotes width/.initial={.8\linewidth},
+  fancy quotes marks/.style={
+    scale=8,
+    text=gray!30,
+    inner sep=0pt,
+  },
+  fancy quotes opening/.style={
+    fancy quotes marks,
+  },
+  fancy quotes closing/.style={
+    fancy quotes marks,
+  },
+  fancy quotes background/.style={
+    show background rectangle,
+    inner frame xsep=0pt,
+    background rectangle/.style={
+      fill=gray!20,
+      rounded corners,
+    },
+  }
+}
+
+\newenvironment{fancyquotes}[1][]{%
+\noindent
+\tikzpicture[fancy quotes background]
+\node[fancy quotes opening,anchor=north west] (fq@ul) at (0,0) {``};
+\tikz@scan@one@point\pgfutil@firstofone(fq@ul.east)
+\pgfmathsetmacro{\fq@width}{\linewidth - 2*\pgf@x}
+\node[fancy quotes,#1] (fq@txt) at (fq@ul.north west) \bgroup}
+{\egroup;
+\node[overlay,fancy quotes closing,anchor=east] at (fq@txt.south east) {''};
+\endtikzpicture}
+
+%\usepackage[many]{tcolorbox}
+
+%% http://tex.stackexchange.com/questions/277777/block-quote-with-big-quotation-marks-in-margin
+%% https://www.google.it/?gws_rd=ssl#newwindow=1&q=latex+with+big+quotes
+%\newtcolorbox{fancyquote}{%
+%    enhanced jigsaw, 
+%    breakable,      % permette di interrompere la pagina
+%    frame hidden,   % nasconde il frame di default
+%    left=1cm,       % margine sx
+%    right=1cm,      % margine dx
+%    overlay={%
+%        \node [scale=10,
+%            text=gray!30,
+%            inner sep=0pt,] at ([xshift=-0.5cm,yshift=-1cm]frame.north west){``}; 
+%        \node [scale=10,
+%            text=gray!30,
+%            inner sep=0pt,] at ([xshift=0.5cm]frame.south east){''};  
+%            },
+        % il paragrafo viene inserito con tcolorbox
+%                parbox=false,
+%}
+\newtcolorbox{fancyquote}{%
+    enhanced jigsaw, 
+    breakable,      % permette di interrompere la pagina
+    frame hidden,   % nasconde il frame di default
+    left=1cm,       % margine sx
+    right=1cm,      % margine dx
+    overlay  unbroken={%
+        \node [scale=6.5,
+            text=gray!40,
+            inner sep=0pt,] at ([xshift=0.5cm,yshift=-1.2cm]frame.north west){``};%xshift=-0.5cm
+        \node [scale=6.5,%yshift=-1cm
+            text=gray!40,
+            inner sep=0pt,] at ([xshift=-0.5cm,yshift=-0.1cm]frame.south east){''};%xshift=0.5cm
+    },
+    % se si vuole una grafica diversa modificare i numeri!!
+    overlay first={%
+    \node [scale=6.5,
+            text=gray!40,
+            inner sep=0pt,] at ([xshift=0.5cm,yshift=-1.2cm]frame.north west){``};%xshift=-0.5cm
+    },%yshift=-1cm
+    overlay middle={},
+    overlay last={%
+        \node [scale=6.5,
+            text=gray!40,
+            inner sep=0pt,] at ([xshift=-0.5cm,yshift=-0.1cm]frame.south east){''};%xshift=0.5cm
+    },
+    % il paragrafo viene inserito con tcolorbox
+    parbox=false,
+    % angoli in tondo
+    arc=10pt
+}
+
+%\newenvironment{fancyquote}{\begin{quote}\begin{fquote}\normalsize}{\end{fquote}\end{quote}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\evidence}[1]{%
+\let\onecoltruefalse=1
+\ifnum\the\col@number>1
+	\end{multicols}
+	\let\onecoltruefalse=0
+\fi
+\begin{fancyquote}#1\end{fancyquote}
+\if\onecoltruefalse0
+	\begin{multicols}{2}
+	\let\onecoltruefalse=1
+\fi
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pagedim}[1]{%
+  \newcount\shiftx
+  \newcount\paperheightaddspace
+  \newcount\shifty
+  \newcount\posworldx
+  \newcount\posworldy
+  \newcount\dimworld
+  \newcount\titleshiftx
+  \newcount\titleshifty
+  \newcount\vskipdate
+  \newcount\widthtitleminipage
+%  \if#1a
+%    \shiftx 136
+%    \shifty -247
+%    \geometry{
+%      includehead,
+%      includefoot,
+%      headsep=1.5cm,
+%      footskip=22mm,
+%      footnotesep=6mm,
+%      vmarginratio=1:1,hmarginratio=1:1,%centering,vcentering,
+%      heightrounded,paperwidth=21cm,paperheight=29.7cm,textwidth=14cm,textheight=20cm,
+%    }
+%  \else
+%    \if#1b
+%      \geometry{
+%        includehead,
+%        includefoot,
+%        heightrounded,
+%      }
+%      \shiftx 113.7
+%      \shifty -205.5
+%\fi
+%\fi
+\ifthenelse{\equal{#1}{a4}}{%% condizione vera
+    \shiftx 385%385
+    \paperheightaddspace 22
+    \shifty -729
+    \posworldx -30
+    \posworldy 560 %% 553
+    \dimworld 49
+    \titleshiftx -30
+    \titleshifty 240
+    \vskipdate 25
+    \widthtitleminipage 155
+    \geometry{
+      includehead,
+      includefoot,
+      headsep=2cm,
+      footskip=22mm,
+      footnotesep=6mm,
+      vmarginratio=1:1,hmarginratio=1:1,%centering,vcentering,
+      heightrounded,paperwidth=21cm,paperheight=29.7cm,textwidth=14cm,textheight=20cm,
+    }
+  }{%
+    \shiftx 320
+    \paperheightaddspace 18
+    \shifty -610
+    \posworldx -14
+    \posworldy 445
+    \dimworld 35
+    \titleshiftx -14
+    \titleshifty 200
+    \vskipdate 20
+    \widthtitleminipage 130
+    \geometry{
+      includehead,
+      includefoot,
+      heightrounded,
+    }
+}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Comando per fare i ``box'', contenitori in cui collocare materiale vario, curiosità ecc...
+% uso \begin{sectionbox}{<titolo>}...\end{sectionbox}
+%%
+\newcounter{mybox}[chapter]
+%\setcounter{mybox}{0}
+%\stepcounter{mybox}
+%\refstepcounter{mybox}
+\renewcommand{\themybox}{\thechapter.\arabic{mybox}}
+\newenvironment{sectionbox}[1]{\vspace{1em}
+\refstepcounter{mybox}
+%%
+\newcommand{\cornice}{%
+\begin{tikzpicture}
+\node[fill=Maroon, text=white, rectangle, rounded corners,%
+right=10pt] {%
+\bfseries\small Box~\themybox: \color{white}#1};
+\end{tikzpicture}%
+}
+\begin{multicols}{2}[%
+{\color{Maroon}\noindent\lower0.45ex\hbox{\Rightscissors}{\normalfont\dotfill}}
+\lower1.2ex\hbox{\cornice}\vspace*{-0.7em}%
+%\lower0.50ex\hbox{\small\bfseries Box~\themybox~-- #1}\vspace*{-0.7em}%
+]
+\small
+\addcontentsline{toc}{subsection}{Box~\themybox~-- #1}}%
+{\end{multicols}\vspace*{-20px}%
+{\color{Maroon}\noindent{\normalfont\vdots\dotfill}%
+\lower0.45ex\hbox{\Leftscissors}}\vspace{1em}
+}
+
+%\newcommand{\sectionbox}[2]{\refstepcounter{mybox}% è necessario il package marvosym per i simboli
+                                              % \Rightscissors e \Leftscissors
+%\addcontentsline{toc}{subsection}{Box~\themybox~-- #1}
+%\subsubsection*{
+%\noindent\lower0.45ex\hbox{\Rightscissors}{\normalfont\dotfill}
+%\lower0.50ex\hbox{\small Box~\themybox~-- #1}
+%}
+%     \vspace{-0.5em}{\small#2}\vspace{-2em}
+%\subsubsection*{\noindent\lower0.08ex\hbox{}{\normalfont\dotfill}%
+%\lower0.45ex\hbox{\Leftscissors}}\vspace{1.1em}
+%\addtocounter{mybox}{0}
+%\refstepcounter{mybox}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand*{\acsfont}[1]{\textsmaller{#1}} % è necessario il package relsize
+%% comando per l'epigrafe
+%\newcommand{\epigrafe}[2]{\begingroup%
+%\setlength{\epigraphwidth}{6cm}
+%\epigraph{#1}{#2}\bigskip
+%\endgroup
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% esempi ed esercizi %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+%% Uso dei due ambienti (occorre il package amsthm)
+%% Nota: il primo NON esegue numerazione il secondo si
+%% \begin{teoremann}[Teorema di pitagora]<...testo...>\end{teoremann}
+%% compone il testo di un teorema non numerato di nome Teorema. Tra parentesi
+%% tonde viene composto, se presente, il testo racchiuso tra le parentesi quadre
+%% presenti nella dichiarazione di apertura dell'ambiente \begin{teoremann}. Nel
+%% caso in cui non si desideri il testo tra parentesi tonde si scriverà:
+%% \begin{teoremann}<...testo...>\end{teoremann}
+%% Il secondo ambiente funziona esattamente come il primo disponendone però
+%% anche la numerazione in base alla sezione.
+%%
+%% Nel caso si desideri fornire la dimostrazione di un teorema si ricorre
+%% all'ambiente:
+%% \begin{proof}
+%% <...dimostrazione...>
+%% \end{proof}
+%% Se si desidera fornire anche un titolo:
+%% \begin{proof}[Titolo della dimostrazione]
+%% <...dimostrazione...>
+%% \end{proof}
+%% Alla fine della dimostrazione l'ambiente "proof" posiziona il simbolo
+%% "QED". Se la fine della dimostrazione coincide con un'equazione o una lista il
+%% posizionamento del simbolo potrebbe essere problematico. In tal caso basta
+%% inserire il comando \qedhere nel punto in cui dovrà comparire il simbolo QED.
+%%
+\newtheorem*{teoremann}{Teorema}
+\newtheorem{teorema}{Teorema}[section]
+%%%%
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{esercizio}{Esercizio}[section]
+%%
+% Comando ambiente example per fare esempi
+% Uso \begin{example}{titolo}{testo esempio}{soluzione}\end {example}
+% compone usando titolo tra parentesi tonde
+% se il primo argomento titolo nella prima coppia di graffe non è presente:
+% \begin{example}{}{testo esempio}{soluzione}\end {example}
+% allora viene composto l'esempio con il solo testo e soluzione
+%     \begin{example}{titolo}
+%     {\label{etichetta}Testo esercizio}
+        %%
+%     {Svolgimento esercizio}
+%     \end{example}
+\newenvironment{exercise}[3]{\small\begin{esercizio}[#1]{#2}
+
+\medskip\normalfont#3
+%\begin{center}\vspace{-1ex}\rule{100px}{0.5px}\medskip\end{center}
+}{\begin{center}\vspace{-1ex}\rule{100px}{0.5px}\medskip\end{center}%
+\end{esercizio}}
+%% Stessa cosa con  esempi
+\newenvironment{example}[3]{\small\begin{esempio}[#1]{#2}
+
+\medskip\normalfont#3
+\begin{center}\vspace{-1ex}\rule{100px}{0.5px}\medskip\end{center}
+}{\end{esempio}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\fracoffrac}[2]{\dfrac{\mathstrut #1}{#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% COMANDI PER INDICARE TENSIONI, CORRENTI, POTENZE ecc... %%%
+%%% IN MODO MATEMATICO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Rs}{\text{\normalfont R}}
+\newcommand{\rs}{\text{\normalfont r}}
+\newcommand{\Es}{\text{\normalfont E}}
+\newcommand{\Ps}{\text{\normalfont P}}
+\newcommand{\Ts}{\text{\normalfont T}}
+\newcommand{\ts}{\text{\normalfont t}}
+\newcommand{\Is}{\text{\normalfont I}}
+\newcommand{\nf}[1]{\normalfont \,#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% COMANDO PER FARE L'INPUT DEI BOX %%%%%%%%%%%%%%%%
+%%%% Imposta la testatina delle pagine pari per ospitare
+%%%% il titolo del box, esegue l'input del box e reimposta
+%%%% la testatina originale.
+%%%% Uso:
+%%%% \inputbox{<titolo_del_box>}{<path_e_nome_del_box>}
+%%%% Esempio:
+%%%% \inputbox{Il cervello}{box/cervello}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\inputbox}[2]{%
+\fancyhead[RE]{\sl\small\nouppercase Box~\themybox: #1}
+\begin{sectionbox}{#1}
+\input{#2}
+\end{sectionbox}
+\fancyhead[RE]{\sl\small\nouppercase\rightmark}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    I BOX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtcolorbox[auto counter,number within=chapter]{mybox}[2][]{%
+enhanced,breakable,pad at break=2mm,top=2.5mm, left=2mm, right=2mm,
+%attach boxed title to top left,
+attach boxed title to top left={xshift=5mm,yshift=-3mm},
+%boxed title style={size=small,colback=gray!5!white},
+boxed title style={enhanced,colframe=red!70!black,
+interior style={top color=gray!30!white,bottom color=gray!10!white,
+middle color=gray!20!white},
+drop fuzzy shadow},
+  % utilizzo dei watermark
+  % watermark text=My Watermark,watermark opacity=0.25, %watermark color=red!25!white,
+%watermark tikz={\draw[line width=2mm] circle (1cm)
+%node{\fontfamily{ptm}\fontseries{b}\fontsize{20mm}{20mm}\selectfont !};},
+%watermark zoom=0.35,watermark opacity=0.25,
+  % per avere un numero che identifica le parti di un box eventualmente diviso su
+  % più parti:
+%watermark text=\arabic{tcbbreakpart},
+fonttitle={\small\bfseries},coltitle=red!70!black,
+  %title after break=...continua dalla pagina precedente,
+colframe=red!70!black,
+interior style={top color=gray!5!white,bottom color=gray!5!white,
+middle color=gray!5!white},
+shadow={2mm}{-1mm}{0mm}{black!15!white},
+title=Box.~\thetcbcounter:~#2,#1%
+}
+
+%\makeatletter
+%  \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%  \renewcommand{\sectionmark}[1]{\markright{#1}}
+%\renewcommand\chaptermark[1]{%
+%\markboth{\chaptername\ \thechapter. #1}{}}
+%\renewcommand\sectionmark[1]{%
+%\markright{\thesection. #1}}
+%\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% UTILIZZARE UNA DELLE DUE SEQUENZE
+%% DI COMANDI PER SPEZZARE I LINK LUNGHI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
+%  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+%  \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+%  \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+%  \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+%  \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+%  \do\Y\do\Z}
+%%%%%%%%%%
+%% OPPURE:
+%%%%%%%%%%
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% permette di scrivere in bibliografia due link diversi
+%% con il comando \URL{link_1} \URL{link_2}. In bibliografia si scrive:
+%% ...
+%% note = {\URL{link_1} e \URL{link_2}}
+\let\URL\url
+\makeatletter
+\def\url#1{\@URL#1;;\@nil}
+\def\@URL#1;#2;#3\@nil{%
+  \URL{#1}\ifx\relax#2\relax\else; \URL{#2}\fi}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \filetto{1} imposta il filetto tra colonne, \filetto{0} no
+\newcommand{\filetto}[1]{%
+\ifcase#1\setlength\columnseprule{0pt}\or\setlength\columnseprule{0.4pt}
+  \else\setlength\columnseprule{0pt}\fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ecc}{ecc\ldots\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% UNITÀ DI MISURA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\microfarad}{\si{\;\!\micro\F}}
+\newcommand{\picofarad}{\si{\;\!\pF}}
+\newcommand{\pF}{\si{\;\!\pF}}
+\newcommand{\volt}{\si{\;\!\volt}}
+\newcommand{\nF}{\si{\;\!\nF}}
+\newcommand{\uf}{\si{\;\!\micro\F}}
+\newcommand{\UM}[1]{\mathrm{#1}}
+\newcommand{\milliampere}{\si{\;\!\milli\ampere}}
+\newcommand{\kg}{\si{\;\!\kilogram}}
+%\newcommand{\microfarad}{\si{\,\micro\F}}
+%\newcommand{\UM}[1]{\mathrm{#1}}
+%\newcommand{\milliampere}{\si{\,\milli\ampere}}
+\newcommand{\mA}{\si{\;\!\milli\ampere}}
+\newcommand{\mW}{\si{\;\!\milli\watt}}
+%\newcommand{\kg}{\si{\,\kilogram}}
+\newcommand{\mV}{\si{\;\!\milli\volt}}
+\newcommand{\mmq}{\si{\;\!\milli\milli}\ap{2}}
+\newcommand{\mm}{\si{\;\!\milli\milli}}
+\newcommand{\hfe}{\text{h}_{\text{FEmin}}}
+\newcommand{\ohm}{\si{\;\!\ohm}}
+\newcommand{\ampere}{\si{\;\!\ampere}}
+\newcommand{\kohm}{\si{\;\!\kohm}}
+\newcommand{\Mohm}{\si{\;\!\Mohm}}
+\newcommand{\watt}{\si{\;\!\watt}}
+\newcommand{\Hz}{\si{\;\!\hertz}}
+\newcommand{\joule}{\si{\;\!\joule}}
+\newcommand{\tesla}{\si{\;\!\tesla}}
+\newcommand{\weber}{\si{\;\!\weber}}
+\newcommand{\second}{\si{\;\!\second}}
+\newcommand{\coulomb}{\si{\;\!\coulomb}}
+\newcommand{\decibel}{\si{\;\!\decibel}}
+\newcommand{\MHz}{\si{\;\!\mega\hertz}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comando per fare le note a margine come fossero titoli di una sezione
+%% Uso:
+%% \marginsect{<testo>}
+%% Font carini: LinuxBiolinumT-OsF; pag
+\newcommand{\marginsect}[1]{
+														\marginpar{%
+																\textcolor{uacorpblue}{
+																\rule{\linewidth}{0.3ex}
+																\normalfont 
+																%\fontfamily{LinuxBiolinumT-OsF}\selectfont
+																\sffamily\textbf{%
+																\begin{scriptsize}#1																  \end{scriptsize}}%%
+																\\[-1ex]\rule{\linewidth}{0.3ex}}}
+														}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comando per avere un look and feel simile alla shell linux
+%% Synopsis (font_size se omesso per default è \normalsize):
+%% \begin{shell}[<font_size>]{label=<label_name>}{<Titolo>}{<morekeyword>}{<deletekeywords>}{<alsoletter>}{<language>}
+%%  	<contenuto>
+%% \end{shell}
+%% Example:
+%% \begin{shell}[\small]{label=shell}{Titolo}{wget,\$,ls,al}{read,for}{bash}
+%%		bla bla bla
+%% \end{shell}
+%%
+%% \begin{shell}{label=shell}{Titolo}{}{}{}{} <-- senza argomento ma con parentesi
+%%		bla bla bla
+%% \end{shell}
+%%
+\newtcblisting[auto counter, number within=section]{shell}[7][\small]{%
+colback=gray!10, colframe=gray!70!black, listing only, breakable, enhanced jigsaw, top=-1mm, bottom=-1mm, before=\par\bigskip,after=\par\medskip,
+%%
+title={\hspace{-3mm}$\otimes\,\blacktriangledown\,\blacktriangle\quad$
+													\hfill\thetcbcounter:~#3},
+fonttitle=\sffamily,%\bfseries,
+%%
+listing options = {%
+	language=#7, columns=fullflexible, keywordstyle=\color{Maroon}, basicstyle=#1\ttfamily, breaklines=true, morekeywords={#4}, deletekeywords={#5}, escapechar=£, alsoletter={#6},
+	tabsize=1,showtabs=false,breakindent=0pt},
+rounded corners=all,
+shadow={1mm}{-1mm}{0mm}{black!15!white},%
+#2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comando per avere un box di attenzione
+%% Synopsis:
+%% Con titolo
+%% \begin{marker}[Titolo]
+%%		bla bla bla
+%% \end{marker}
+%%
+%%% Senza titolo
+%% \begin{marker}
+%%		bla bla bla
+%% \end{marker}
+%%
+\newtcolorbox{marker}[1][]{enhanced,
+  before skip=2mm,after skip=3mm,title=#1,fonttitle=\sffamily,%\bfseries,
+  boxrule=0.4pt,left=12mm,right=2mm,top=1mm,bottom=1mm,before=\par\bigskip,after=\par\medskip,
+  colback=yellow!50,
+  colframe=yellow!20!black,
+  sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+  underlay={%
+    \path[fill=tcbcol@back!80!black] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[draw=tcbcol@frame,shorten <=-0.05mm,shorten >=-0.05mm] ([yshift=3mm]interior.south east)--++(-0.4,-0.1)--++(0.1,-0.2);
+    \path[fill=yellow!50!black,draw=none] (interior.south west) rectangle node[white]{\huge\bfseries \faExclamationTriangle} ([xshift=10mm]interior.north west);
+    },
+  drop fuzzy shadow,#1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MACRO PER LA FORMA ESPONENZIALE INGEGNERISTICA DI UN NUMERO COMPLESSO 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% L'argomento opzionale a \phase è 0 (default) 1, 2 oppure 3, vengono
+%% usati per indicare rispettivamente \displaystyle, \textstyle,
+%% \scriptstyle oppure \scriptscriptstyle. Uso:
+%% \[ A\phase{M}A\phase{\frac{1}{2}}\frac{1}{2} \]
+%% \[ A\phase{M}A\phase{\frac{1}{2}}\frac{1}{2} \]
+%% $\frac{\phase[2]{a}}{b}X\phase{X}X$
+\newsavebox{\phasebox}
+\newlength{\phasedp}
+\newlength{\phaseht}
+\newlength{\phasetot}
+\newlength{\phasewd}
+\makeatletter
+\newcommand\phase[2][0]{%
+  \sbox\phasebox{%
+    $\ifcase#1\relax
+      \displaystyle\or\textstyle\or\scriptstyle\or\scriptscriptstyle
+     \fi#2$}
+  \phaseht=\ht\phasebox
+  \phasedp=\dp\phasebox
+  \phasetot=\phasedp\advance\phasetot .35ex %0.23ex
+    \advance\phasetot\phaseht
+  \phasewd=\wd\phasebox
+    \advance\phasewd .5\phasetot
+  \setbox0=\vbox to\phaseht{
+  \hbox{\setlength{\unitlength}{1pt}\linethickness{.6pt}%
+    \edef\ph@x{\strip@pt\phasewd}
+  \edef\ph@y{\strip@pt\phasetot}%
+      \dimen@ .7\phasetot \edef\ph@dx{\strip@pt\dimen@}%
+      \begin{picture}(\ph@x,\ph@y)
+        \put(0,0){\circle*{.4}}
+        \put(0,0){\line(1,0){\ph@x}}\put(0,0){\line(1,2){\ph@dx}}
+        \put(\ph@dx,1.5){\raise\phasedp\vbox
+{\box\phasebox}}
+      \end{picture}%
+}\vss}\advance\phasedp .35ex \advance\phasedp .6pt \dp0=\phasedp
+\box0}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
